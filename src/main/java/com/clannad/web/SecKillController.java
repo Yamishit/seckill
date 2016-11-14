@@ -56,7 +56,7 @@ public class SecKillController {
             method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
     @ResponseBody
-    public SecKillResult<Exposer> exposer(Long seckillId){
+    public SecKillResult<Exposer> exposer(@PathVariable("seckillId") Long seckillId){
         SecKillResult<Exposer> result;
         try{
             Exposer exposer = secKillService.exportSecKillUrl(seckillId);
@@ -108,6 +108,7 @@ public class SecKillController {
     }
 
     @RequestMapping(value = "/time/now",method = RequestMethod.GET)
+    @ResponseBody
     public SecKillResult<Long> time(){
         Date now = new Date();
         return new SecKillResult<Long>(true,now.getTime());
