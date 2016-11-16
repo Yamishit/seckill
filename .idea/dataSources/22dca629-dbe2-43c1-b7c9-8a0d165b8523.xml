@@ -19,85 +19,139 @@
     <table id="12" parent="1" name="success_killed">
       <comment>秒杀成功明细表</comment>
     </table>
-    <column id="13" parent="11" name="seckill_id">
+    <table id="13" parent="1" name="user">
+      <comment>用户表</comment>
+    </table>
+    <column id="14" parent="11" name="seckill_id">
       <comment>商品库存id</comment>
       <mandatory>1</mandatory>
       <data-type>bigint(20)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="14" parent="11" name="name">
+    <column id="15" parent="11" name="name">
       <comment>商品名称</comment>
       <mandatory>1</mandatory>
       <data-type>varchar(120)|0</data-type>
     </column>
-    <column id="15" parent="11" name="number">
+    <column id="16" parent="11" name="number">
       <comment>库存数量</comment>
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="16" parent="11" name="start_time">
+    <column id="17" parent="11" name="start_time">
       <comment>秒杀开始时间</comment>
       <mandatory>1</mandatory>
       <data-type>timestamp|0</data-type>
       <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
-    <column id="17" parent="11" name="end_time">
+    <column id="18" parent="11" name="end_time">
       <comment>秒杀结束时间</comment>
       <mandatory>1</mandatory>
       <data-type>timestamp|0</data-type>
       <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
     </column>
-    <column id="18" parent="11" name="create_time">
+    <column id="19" parent="11" name="create_time">
       <comment>创建时间</comment>
       <mandatory>1</mandatory>
       <data-type>timestamp|0</data-type>
       <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
-    <index id="19" parent="11" name="idx_create_time">
+    <index id="20" parent="11" name="idx_create_time">
       <columns>create_time</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="20" parent="11" name="idx_end_time">
+    <index id="21" parent="11" name="idx_end_time">
       <columns>end_time</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="21" parent="11" name="idx_start_time">
+    <index id="22" parent="11" name="idx_start_time">
       <columns>start_time</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="22" parent="11" name="PRIMARY">
+    <key id="23" parent="11" name="PRIMARY">
       <columns>seckill_id</columns>
       <primary>1</primary>
     </key>
-    <column id="23" parent="12" name="seckill_id">
+    <column id="24" parent="12" name="seckill_id">
       <comment>秒杀商品id</comment>
       <mandatory>1</mandatory>
       <data-type>bigint(20)|0</data-type>
     </column>
-    <column id="24" parent="12" name="user_phone">
+    <column id="25" parent="12" name="user_phone">
       <comment>用户手机号</comment>
       <mandatory>1</mandatory>
       <data-type>bigint(20)|0</data-type>
     </column>
-    <column id="25" parent="12" name="state">
+    <column id="26" parent="12" name="state">
       <comment>状态标示:-1:无效,0:成功,1:已付款,2:已发货</comment>
       <mandatory>1</mandatory>
       <data-type>tinyint(4)|0</data-type>
       <default-expression>&apos;-1&apos;</default-expression>
     </column>
-    <column id="26" parent="12" name="create_time">
+    <column id="27" parent="12" name="create_time">
       <comment>创建时间</comment>
       <mandatory>1</mandatory>
       <data-type>timestamp|0</data-type>
       <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
-    <index id="27" parent="12" name="idx_create_time">
+    <index id="28" parent="12" name="idx_create_time">
       <columns>create_time</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="28" parent="12" name="PRIMARY">
+    <key id="29" parent="12" name="PRIMARY">
       <columns>seckill_id
 user_phone</columns>
+      <primary>1</primary>
+    </key>
+    <column id="30" parent="13" name="user_id">
+      <comment>用户id</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(24)|0</data-type>
+    </column>
+    <column id="31" parent="13" name="nick_name">
+      <comment>用户名</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="32" parent="13" name="password">
+      <comment>密码</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="33" parent="13" name="date_create">
+      <comment>创建时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="34" parent="13" name="birthday">
+      <comment>用户生日</comment>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+    </column>
+    <column id="35" parent="13" name="gender">
+      <comment>用户性别</comment>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="36" parent="13" name="last_update">
+      <comment>用户最后一次修改信息</comment>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+    </column>
+    <column id="37" parent="13" name="salt">
+      <comment>盐值</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="38" parent="13" name="session_token">
+      <comment>用户的sessionToken</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="39" parent="13" name="PRIMARY">
+      <columns>user_id</columns>
       <primary>1</primary>
     </key>
   </database-model>

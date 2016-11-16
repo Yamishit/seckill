@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.clannad.dao.UserDao">
+    <insert id="creteUser" useGeneratedKeys="true" keyColumn="user_id" keyProperty="id" parameterType="com.clannad.dto.UserInfo">
+        insert into user(user_id,nick_name,password,birthday,gender,salt,session_token)
+        values(#{userId},#{nickName},#{password},#{birthDay},#{gender},#{salt},#{sessionToken})
+    </insert>
+
+</mapper>
