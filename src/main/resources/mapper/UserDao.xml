@@ -3,7 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.clannad.dao.UserDao">
-    <insert id="creteUser" useGeneratedKeys="true" keyColumn="user_id" keyProperty="id" parameterType="com.clannad.dto.UserInfo">
+    <insert id="creteUser" useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId" parameterType="com.clannad.bean.UserBean">
+        <selectKey keyProperty="userId" resultType="java.lang.String">
+            SELECT
+            LAST_INSERT_ID() AS userId
+        </selectKey>
         insert into user(user_id,nick_name,password,birthday,gender,salt,session_token)
         values(#{userId},#{nickName},#{password},#{birthDay},#{gender},#{salt},#{sessionToken})
     </insert>

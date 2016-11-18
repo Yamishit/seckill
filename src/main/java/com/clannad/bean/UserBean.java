@@ -1,22 +1,20 @@
-package com.clannad.dto;
+package com.clannad.bean;
 
-import java.math.BigInteger;
 import java.util.Date;
 
 /**
  * Created by F_ck on 2016/11/16.
  */
-public class UserInfo {
+public class UserBean {
     private String userId;
     private Date birthDay;
     private Date dateCreate;
-    private BigInteger gender;
+    private int gender;
     private Date lastUpdate;
     private String nickName;
     private String password;
     private String salt;
     private String sessionToken;
-
 
     public String getUserId() {
         return userId;
@@ -42,11 +40,11 @@ public class UserInfo {
         this.dateCreate = dateCreate;
     }
 
-    public BigInteger getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(BigInteger gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 

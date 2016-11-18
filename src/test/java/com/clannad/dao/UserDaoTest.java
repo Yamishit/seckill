@@ -16,14 +16,15 @@ import java.util.Date;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})
 public class UserDaoTest {
-    @Autowired
-    UserDao userDao;
 
-    @Test
-    public void creteUser() throws Exception {
-        UserInfo userInfo = new UserInfo(new ObjectId().toString(), new Date(), new Date(), 1, new Date(), "df", "ewt", "awdsffsd", "asdg");
-        userDao.creteUser(userInfo);
-    }
+//    @Autowired
+//    UserDao userDao;
+//
+//    @Test
+//    public void creteUser() throws Exception {
+//        UserInfo userInfo = new UserInfo(new ObjectId().toString(), new Date(), new Date(), 1, new Date(), "df", "ewt", "awdsffsd", "asdg");
+//        userDao.creteUser(userInfo);
+//    }
 
 
 }
